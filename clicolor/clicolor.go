@@ -3,8 +3,8 @@ package clicolor
 
 import (
 	"fmt"
+	"github.com/mattn/go-colorable"
 	"io"
-	"os"
 	"regexp"
 	"strings"
 )
@@ -69,7 +69,7 @@ func init() {
 	colors["white"] = "37m"
 	colors["default"] = "39m"
 
-	Out = os.Stdout
+	Out = colorable.NewColorableStdout()
 }
 
 // Finding color code, and returning default one if requested doesn't exit
